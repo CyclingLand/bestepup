@@ -1,3 +1,113 @@
+<!doctype html>
+<html>
 <head>
-<title>Bestepup</title>
-<head>
+	<meta charset="utf-8">
+	<title>Homepage | Bestepup</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="recources/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="recources/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="recources/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="recources/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="recources/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="recources/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="recources/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="recources/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="recources/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="recources/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="recources/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="recources/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="recources/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="recources/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="theme-color" content="#1e90ff" />	<!-- Import my own Stylesheet -->
+		<link href="css/cyclingland.css" rel="stylesheet">
+	<!-- Import Loader -->
+		<link href="css/loader.css" rel="stylesheet">
+	<!-- Import Google Icon Font -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Import materialize.css -->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<!-- Import Animations -->
+		<link rel="stylesheet" href="css/animate.min.css">
+	<!-- Smooth scroll -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cyclingland.github.io/dist/js/smooth-scroll.js"></script>
+	<script src="https://cyclingland.github.io/js/smooth_link.js"></script>
+	<script>
+	$(document).ready(function () {
+    //Source: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+    // Select all links with hashes
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        }
+                    });
+                }
+            }
+        });
+	});</script>
+	<!-- Navbar -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"> </script>
+		<script>
+		$( document ).ready(function(){
+			$(".button-collapse").sideNav();
+			})
+		</script>
+		<script>
+		$(document).ready(function(){
+			$('.parallax').parallax();
+			});
+		</script>
+
+<!-- Start SnowScript -->
+	<script type="text/javascript" src="js/snowstorm.js"></script>
+	<script type="text/javascript">
+		snowStorm.snowColor = '#FFFFFF'; // color of the snow
+		snowStorm.flakesMaxActive = 96;  // show more snow on screen at once
+		snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+	</script>
+
+<!-- End SnowScript-->
+<!-- Start Modals script -->
+	<script>
+		$(document).ready(function(){
+		  // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+		  $('.modal').modal();
+  	});
+    
+	</script>
+</head>
+
+<body>
+</body>
+</html>
